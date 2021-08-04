@@ -4,9 +4,6 @@ My dev blog, created with [`create-svelte`](https://github.com/sveltejs/kit/tree
 
 Feel free to talk anything about the blog in the issues.
 
-
-> Note: the `@next` is temporary
-
 ## Usage
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
