@@ -1,0 +1,21 @@
+---
+title: 'Hello World'
+slug: 'hello-world'
+creationDate: '2020-08-04'
+excerpt: 'Welcome to my blog!'
+cover: futures.jpeg
+hidden: false
+---
+
+<script lang="ts">
+    import PostTile from '$src/lib/posts/postTile.svelte';
+</script>
+
+Welcome to my blog where I talk about DevOps, Rust, and the cloud.
+I debug this in production btw.
+
+<p>
+    wait can i do this?
+</p>
+
+<PostTile title="A Title" excerpt="An Excerpt"></PostTile>
