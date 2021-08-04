@@ -14,6 +14,6 @@ describe('Given a postService', () => {
       
         // send zero or more events to the service that should
         // cause it to eventually reach its expected state
-        postService.send({ type: 'fetchMany', fields: ['title', 'excerpt', 'custom_excerpt'] });
+        postService.send('fetchMany');
       });
 })

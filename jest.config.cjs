@@ -10,6 +10,9 @@ module.exports = {
     '@/src/(.*)': '<rootDir>/src/$1',
   },
   testEnvironment: 'jsdom',
+  setupFiles: [
+    "./setupJest.js"
+  ],
   globals: {
     'ts-jest': {
       isolatedModules: true

@@ -13,7 +13,6 @@ const config = {
       '$src': resolve('./src'),
       '$static': resolve('./static'),
     },
-    replace: [['API_ENDPOINT', "amazing"]],
   }), md.mdsvex(mdsvexConfig)],
   extensions: ['.svelte', ...mdsvexConfig.extensions],
 

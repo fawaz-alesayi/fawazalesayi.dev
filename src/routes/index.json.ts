@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path'
 import frontMatter from 'front-matter';
 import type { Post, PostFrontMatter } from '$src/lib/posts/types';
 
@@ -10,11 +11,13 @@ export async function get(): Promise<{ body: Partial<Post>[] }> {
 }
 
   function getPostsMetaData(): Partial<Post>[] {
+    const blogDirPath = path.join('.', 'src', 'routes', 'blog');
     const posts = fs
-    .readdirSync('./src/')
+    .readdirSync(blogDirPath)
     .filter((elem) => elem.endsWith('.svx'))
     .map((postFilename) => {
-      const postContent = fs.readFileSync(`./src/routes/blog/${postFilename}`, {
+      const blogPostPath = path.join(blogDirPath, postFilename);
+      const postContent = fs.readFileSync(blogPostPath, {
         encoding: 'utf8',
       });
   
@@ -22,7 +25,7 @@ export async function get(): Promise<{ body: Partial<Post>[] }> {
   
       return {
         frontmatter: postFrontMatter.attributes,
-        slug: postFilename,
+        slug: path.parse(blogPostPath).name,
       };
     })
     return posts;

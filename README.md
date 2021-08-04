@@ -1,38 +1,29 @@
-# create-svelte
+# fawazalesayi.dev
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+My dev blog, created with [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-## Creating a project
+Feel free to talk anything about the blog in the issues.
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
 
 > Note: the `@next` is temporary
 
-## Developing
+## Usage
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
-pnpm run dev
+pnpm dev
 
 # or start the server and open the app in a new browser tab
-pnpm run dev -- --open
+pnpm dev -- --open
 ```
 
 ## Building
 
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+Before creating a production version of this blog, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
 
 ```bash
-pnpm run build
+pnpm build
 ```
 
-> You can preview the built app with `pnpm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+> You can preview the built app with `pnpm preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.

@@ -75,21 +75,17 @@ export const blogPostsMachine = createMachine<BlogContext, FetchEvent>({
 
 async function _fetchPosts(): Promise<Partial<Post>[]> {
   try {
-    const res = await fetch('index.json');
+    const res = await fetch('http://localhost:3000/index.json');
     const data: Partial<Post>[] = await res.json();
-    console.log(data);
     return data;
   } catch (err) {
-    console.log(err);
     Promise.reject(err);
   }
 }
 
 
 export async function _fetchPost(slug: string): Promise<Partial<Post> | undefined> {
-  console.log("fetching");
   const res = await fetch(`/posts/${slug}.json`);
   const data = await res.json();
-  console.log(data);
   return data;
 }
