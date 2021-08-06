@@ -29,7 +29,7 @@ export const blogPostsMachine = createMachine<BlogContext, FetchEvent>({
     fetchingMany: {
       invoke: {
         id: 'fetchPosts',
-        src: (_context, _event) => _fetchPosts(),
+        src: () => _fetchPosts(),
         onDone: {
           target: 'loaded',
           actions: assign({ posts: (_context, event) => event.data }),
@@ -44,7 +44,7 @@ export const blogPostsMachine = createMachine<BlogContext, FetchEvent>({
         id: 'fetchPost',
         src: async (_context, event) => {
           if (event.type === 'fetchOne') {
-            return (await _fetchPost(event.slug));
+            return await _fetchPost(event.slug);
           }
         },
         onDone: {
@@ -82,7 +82,6 @@ async function _fetchPosts(): Promise<Partial<Post>[]> {
     Promise.reject(err);
   }
 }
-
 
 export async function _fetchPost(slug: string): Promise<Partial<Post> | undefined> {
   const res = await fetch(`/posts/${slug}.json`);

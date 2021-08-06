@@ -1,5 +1,5 @@
 module.exports = {
-  preset: "ts-jest",
+  preset: 'ts-jest',
   roots: ['<rootDir>/src'],
   testMatch: ['**/?(*.)+(spec|test).+(ts|svelte)'],
   transform: {
@@ -10,12 +10,10 @@ module.exports = {
     '@/src/(.*)': '<rootDir>/src/$1',
   },
   testEnvironment: 'jsdom',
-  setupFiles: [
-    "./setupJest.js"
-  ],
+  setupFiles: ['./setupJest.js'],
   globals: {
     'ts-jest': {
-      isolatedModules: true
-    }
-  }
+      isolatedModules: true,
+    },
+  },
 };

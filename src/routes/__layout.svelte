@@ -17,7 +17,6 @@
     text-rendering: optimizelegibility;
     overflow-x: hidden;
     overflow-y: auto !important;
-
   } /*14px*/
 
   :global(body) {

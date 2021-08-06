@@ -11,8 +11,7 @@
   let { state, send } = useMachine(blogPostsMachine);
 
   onMount(() => {
-    if ($state.matches('idle') || $state.matches('error'))
-      send({ type: 'fetchMany' });
+    if ($state.matches('idle') || $state.matches('error')) send({ type: 'fetchMany' });
   });
 </script>
 

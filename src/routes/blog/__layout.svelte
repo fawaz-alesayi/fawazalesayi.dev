@@ -1,16 +1,14 @@
 <script>
-  import '$static/themes/prism-ghcolors.css'
+  import '$static/themes/prism-ghcolors.css';
 </script>
 
 <header class="header-bg">
   <h4 class="header-text">
     <a href="/"> return; </a>
   </h4>
-</header> 
+</header>
 
-<svelte:head>
-  
-</svelte:head>
+<svelte:head />
 
 <div id="container">
   <article id="content">
@@ -54,11 +52,9 @@
     font-weight: bold;
     text-align: center;
   }
-  
+
   a {
     text-decoration: none;
     color: black;
   }
-
-  
 </style>

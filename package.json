@@ -15,10 +15,10 @@
     "test:integration": "jest"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@babel/preset-env": "^7.14.9",
-    "@sveltejs/adapter-node": "^1.0.0-next.36",
-    "@sveltejs/adapter-static": "^1.0.0-next.14",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@sveltejs/adapter-node": "^1.0.0-next.39",
+    "@sveltejs/adapter-static": "^1.0.0-next.16",
     "@sveltejs/kit": "next",
     "@testing-library/svelte": "^3.0.3",
     "@types/jest": "^26.0.24",
@@ -44,7 +44,7 @@
     "remark-github": "^10.1.0",
     "svelte": "3.40.1",
     "svelte-check": "^2.2.4",
-    "svelte-jester": "^1.7.0",
+    "svelte-jester": "^1.8.2",
     "svelte-preprocess": "^4.7.4",
     "ts-jest": "^27.0.4",
     "tslib": "^2.3.0",
