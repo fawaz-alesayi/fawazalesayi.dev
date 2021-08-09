@@ -2,7 +2,7 @@
 
 My dev blog, created with [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-Feel free to talk anything about the blog in the issues.
+Feel free to talk anything about me, this repo or the blog in the issues.
 
 ## Usage
 
