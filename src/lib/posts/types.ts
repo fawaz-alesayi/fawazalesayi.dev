@@ -13,7 +13,7 @@ export interface PostFrontMatter {
   excerpt: string;
   coverImageUrl: string;
   tags: string[];
-  hidden: boolean;
+  published: boolean;
   slug: string;
 }
 export type blogRequestFields = keyof Post;
