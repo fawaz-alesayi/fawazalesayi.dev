@@ -8,14 +8,11 @@ hidden: false
 ---
 
 <script lang="ts">
+    import '$static/themes/prism-ghcolors.css';
     import PostTile from '$src/lib/posts/postTile.svelte';
 </script>
 
-Welcome to my blog where I talk about DevOps, Rust, and the cloud.
-I debug this in production btw.
 
-<p>
-    wait can i do this?
-</p>
+أهلا بكم في مدونتي التي أكتب فيها عن Rust, DevOps و Cloud
 
-<PostTile title="A Title" excerpt="An Excerpt"></PostTile>
+<PostTile title="عنوان" excerpt="مقتطفة"></PostTile>

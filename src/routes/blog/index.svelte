@@ -1,18 +1,29 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import PostTile from '$src/lib/posts/postTile.svelte';
-  import { onMount, setContext } from 'svelte';
-  import { blogPostsMachine } from '$src/lib/posts/posts';
-  import { useMachine } from '@xstate/svelte';
-  import type { Post } from '$src/lib/posts/types';
-  setContext('posts', {
-    getPosts: () => posts,
-  });
-  let posts: Post[];
-  let { state, send } = useMachine(blogPostsMachine);
+  import type { PostFrontMatter, lang } from '$src/lib/posts/types';
+  import type { LoadInput } from '@sveltejs/kit';
+  /**
+   * @type {import('@sveltejs/kit').Load}
+   */
+  export async function load({ fetch }: LoadInput) {
+    const url = `/blog/endpoint.json`;
+    const res = await fetch(url);
+    let posts = await res.json();
 
-  onMount(() => {
-    if ($state.matches('idle') || $state.matches('error')) send({ type: 'fetchMany' });
-  });
+    if (res.ok) {
+      return {
+        props: {
+          posts: posts.metadata,
+          language: posts.lang,
+        },
+      };
+    }
+  }
+</script>
+
+<script lang="ts">
+  export let posts: PostFrontMatter[];
+  export let language: lang;
 </script>
 
 <header class="header-bg">
@@ -21,21 +32,16 @@
   </h4>
 </header>
 
-{#if $state.matches('loaded')}
-  <section class="posts">
-    <h5 class="recent">Recent Blog Posts</h5>
-    <div id="post-column">
-      {#each $state.context.posts as { frontmatter, slug }}
-        <a href={`/blog/${slug}`}>
-          <PostTile title={frontmatter.title} excerpt={frontmatter.excerpt ?? ''} />
-        </a>
-      {/each}
-    </div>
-  </section>
-{:else if $state.matches('error')}
-  <h1>Something really bad happened.</h1>
-  <h2>You know it's really bad because this whole blog is just a bunch of HTML and CSS files.</h2>
-{/if}
+<section class="posts">
+  <h5 class="recent">Recent Blog Posts</h5>
+  <div id="post-column">
+    {#each posts as { title, slug, excerpt }}
+      <a href={`/blog/${slug}/${language}`}>
+        <PostTile {title} excerpt={excerpt ?? ''} />
+      </a>
+    {/each}
+  </div>
+</section>
 
 <style>
   .header-bg {

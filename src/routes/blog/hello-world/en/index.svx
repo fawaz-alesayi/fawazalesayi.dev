@@ -1,0 +1,19 @@
+---
+title: 'Hello World'
+slug: 'hello-world'
+creationDate: '2020-08-04'
+excerpt: 'Welcome to my blog!'
+cover: futures.jpeg
+hidden: false
+---
+
+<script lang="ts">
+    import PostTile from '$src/lib/posts/postTile.svelte';
+</script>
+
+Welcome to my blog where I talk about DevOps, Rust, and the cloud.
+I debug this in production btw.
+
+
+What I like about this blog is that I can put `svelte` components in here!
+<PostTile title="A Title" excerpt="An Excerpt"></PostTile>

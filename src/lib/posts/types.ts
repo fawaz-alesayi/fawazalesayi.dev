@@ -1,3 +1,5 @@
+export type lang = 'en' | 'ar';
+
 export interface Post {
   frontmatter: PostFrontMatter;
   html: string;
@@ -12,5 +14,6 @@ export interface PostFrontMatter {
   coverImageUrl: string;
   tags: string[];
   hidden: boolean;
+  slug: string;
 }
 export type blogRequestFields = keyof Post;

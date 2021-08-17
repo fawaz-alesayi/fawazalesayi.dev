@@ -7,7 +7,7 @@
    */
   export async function load(): Promise<LoadOutput> {
     return {
-      status: 404,
+      status: 403,
     };
   }
 </script>
