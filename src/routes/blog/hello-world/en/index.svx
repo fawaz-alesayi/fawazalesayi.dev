@@ -12,8 +12,9 @@ hidden: false
 </script>
 
 Welcome to my blog where I talk about DevOps, Rust, and the cloud.
-I debug this in production btw.
+
+I created this blog using SvelteKit and MDSveX. You can find the source code here.
 
 
 What I like about this blog is that I can put `svelte` components in here!
-<PostTile title="A Title" excerpt="An Excerpt"></PostTile>
+<PostTile title="A Svelte Component" excerpt="It has a title and a subtitle!"></PostTile>

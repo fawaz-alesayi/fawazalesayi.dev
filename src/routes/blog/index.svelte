@@ -28,20 +28,24 @@
 
 <header class="header-bg">
   <h4 class="header-text">
-    I write about all sorts of software things, but mostly devops, rust, cloud, and game dev
+    Hi, I'm Fawaz. <br>I write about all sorts of software things, but mostly devops, rust, and cloud.
   </h4>
 </header>
 
 <section class="posts">
   <h5 class="recent">Recent Blog Posts</h5>
   <div id="post-column">
-    {#each posts as { title, slug, excerpt }}
+    {#each posts as { title, slug, excerpt, }}
       <a href={`/blog/${slug}/${language}`}>
         <PostTile {title} excerpt={excerpt ?? ''} />
       </a>
     {/each}
   </div>
 </section>
+
+<svelte:head>
+  <title>Fawaz Alesayi</title>
+</svelte:head>
 
 <style>
   .header-bg {
@@ -54,7 +58,7 @@
     margin: 0;
     font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
       'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
-    padding: 5% 10%;
+    padding: 3vh 5vw;
     line-height: 1.5;
     color: #f8f8f8;
     font-weight: bold;

@@ -1,6 +1,6 @@
-<script>
-  export let title;
-  export let excerpt;
+<script lang="ts">
+  export let title: string;
+  export let excerpt: string;
 </script>
 
 <div class="tile">
