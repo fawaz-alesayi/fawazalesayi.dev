@@ -1,11 +1,11 @@
 <script lang="ts" context="module">
   import PostTile from '$src/lib/posts/postTile.svelte';
   import type { PostFrontMatter, lang } from '$src/lib/posts/types';
-  import type { LoadInput } from '@sveltejs/kit';
+  import type { LoadInput, LoadOutput } from '@sveltejs/kit';
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ fetch }: LoadInput) {
+  export async function load({ fetch }: LoadInput): Promise<LoadOutput> {
     const url = `/blog/endpoint.json`;
     const res = await fetch(url);
     let posts = await res.json();
@@ -18,6 +18,8 @@
         },
       };
     }
+    
+    return {}
   }
 </script>
 
@@ -28,14 +30,15 @@
 
 <header class="header-bg">
   <h4 class="header-text">
-    Hi, I'm Fawaz. <br>I write about all sorts of software things, but mostly devops, rust, and cloud.
+    Hi, I'm Fawaz. <br />I write about all sorts of software things, but mostly devops, rust, and
+    cloud.
   </h4>
 </header>
 
 <section class="posts">
   <h5 class="recent">Recent Blog Posts</h5>
   <div id="post-column">
-    {#each posts as { title, slug, excerpt, }}
+    {#each posts as { title, slug, excerpt }}
       <a href={`/blog/${slug}/${language}`}>
         <PostTile {title} excerpt={excerpt ?? ''} />
       </a>

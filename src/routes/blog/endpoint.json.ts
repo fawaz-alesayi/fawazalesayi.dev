@@ -44,9 +44,9 @@ function getPostsMetaData(lang: lang): PostFrontMatter[] {
 
       // Merge the frontmatter of the post with the shared frontmatter
       // postFrontMatter overrides sharedFrontMatter
-      return {...sharedFrontMatter.attributes, ...postFrontMatter.attributes}
+      return { ...sharedFrontMatter.attributes, ...postFrontMatter.attributes };
     })
-    .filter(metadata => metadata.published);
+    .filter((metadata) => metadata.published);
 
   return posts;
 }
@@ -58,4 +58,3 @@ function readFrontMatter(blogPostMetadataPath: string) {
   const postFrontMatter = frontMatter<PostFrontMatter>(postMetadata);
   return postFrontMatter;
 }
-

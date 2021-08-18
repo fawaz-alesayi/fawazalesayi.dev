@@ -1,4 +1,4 @@
-<slot></slot>
+<slot />
 
 <style>
   /* Global Styles */
