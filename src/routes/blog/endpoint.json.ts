@@ -5,6 +5,7 @@ import type { PostFrontMatter, lang } from '$src/lib/posts/types';
 import type { RequestHandler } from '@sveltejs/kit';
 import parser from 'accept-language-parser';
 
+// Required because SvelteKit endpoints do not support TypeScript Interfaces as a return type for some reason.
 export type Typify<T> = { [K in keyof T]: Typify<T[K]> };
 
 interface EndpointOutput {

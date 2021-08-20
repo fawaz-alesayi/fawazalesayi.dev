@@ -30,8 +30,8 @@
 
 <header class="header-bg">
   <h4 class="header-text">
-    Hi, I'm Fawaz. <br />I write about all sorts of software things, but mostly devops, rust, and
-    cloud.
+    Hi, I'm Fawaz. <br />I write about all sorts of software things, but mostly DevOps, Rust, and
+    Cloud.
   </h4>
 </header>
 
