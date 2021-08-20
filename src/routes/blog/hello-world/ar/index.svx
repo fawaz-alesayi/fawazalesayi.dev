@@ -13,6 +13,11 @@ hidden: false
 </script>
 
 
-أهلا بكم في مدونتي التي أكتب فيها عن Rust, DevOps و Cloud
+أهلا بك في مدونتي التي أكتب فيها عن Rust, DevOps و Cloud
+
+صنعت هذه المدونة باستخدام SvelteKit و MDSveX
+يمكنك الحصول على المصدر من هذا الرابط
+
+https://github.com/fawaz-alesayi/fawazalesayi.dev
 
 <PostTile title="عنوان" excerpt="مقتطفة"></PostTile>
