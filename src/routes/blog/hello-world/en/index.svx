@@ -5,6 +5,7 @@ creationDate: '2020-08-04'
 excerpt: 'Welcome to my blog!'
 cover: futures.jpeg
 hidden: false
+lang: 'en'
 ---
 
 <script lang="ts">

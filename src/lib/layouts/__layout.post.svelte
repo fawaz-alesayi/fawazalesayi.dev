@@ -1,4 +1,5 @@
 <script>
+  export let lang;
   export let title;
   export let creationDate;
 </script>
@@ -13,7 +14,7 @@
   </h4>
 </header>
 
-<div id="container">
+<div id="container" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
   <article id="content">
     <h2>{title}</h2>
     <slot />
