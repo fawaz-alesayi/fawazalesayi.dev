@@ -20,8 +20,6 @@ const config = {
   extensions: ['.svelte', ...mdsvexConfig.extensions],
 
   kit: {
-    // hydrate the <div id="svelte"> element in src/app.html
-    target: '#svelte',
     vite: {
       resolve: {
         alias: {

@@ -1,11 +1,9 @@
 <script lang="ts" context="module">
   import PostTile from '$src/lib/posts/postTile.svelte';
   import type { PostFrontMatter, lang } from '$src/lib/posts/types';
-  import type { LoadInput, LoadOutput } from '@sveltejs/kit';
-  /**
-   * @type {import('@sveltejs/kit').Load}
-   */
-  export async function load({ fetch }: LoadInput): Promise<LoadOutput> {
+
+  /** @type {import('./__types/index').Load} */
+  export async function load({fetch}) {
     const url = `/blog/endpoint.json`;
     const res = await fetch(url);
     let posts = await res.json();
