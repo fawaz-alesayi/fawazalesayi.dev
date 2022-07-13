@@ -1,44 +1,25 @@
-<script lang="ts" context="module">
-  import PostTile from '$src/lib/posts/postTile.svelte';
-  import type { PostFrontMatter, lang } from '$src/lib/posts/types';
-
-  /** @type {import('./__types/index').Load} */
-  export async function load({fetch}) {
-    const url = `/blog/endpoint.json`;
-    const res = await fetch(url);
-    let posts = await res.json();
-
-    if (res.ok) {
-      return {
-        props: {
-          posts: posts.metadata,
-          language: posts.lang,
-        },
-      };
-    }
-    
-    return {}
-  }
-</script>
-
 <script lang="ts">
-  export let posts: PostFrontMatter[];
+  import PostTile from '$src/lib/posts/postTile.svelte';
+  import { t } from '$lib/translations';
+
+  import type { lang, PostFrontMatter } from '$src/lib/posts/types';
+
+  export let metadata: PostFrontMatter[];
   export let language: lang;
 </script>
 
 <header class="header-bg">
   <h4 class="header-text">
-    Hi, I'm Fawaz. <br />I write about all sorts of software things, but mostly DevOps, Rust, and
-    Cloud.
+    Hi, I'm Fawaz. <br />I write about all sorts of programming things
   </h4>
 </header>
 
 <section class="posts">
-  <h5 class="recent">Recent Blog Posts</h5>
+  <h5 class="recent">{$t('index.recent')}</h5>
   <div id="post-column">
-    {#each posts as { title, slug, excerpt }}
-      <a href={`/blog/${slug}/${language}`}>
-        <PostTile {title} excerpt={excerpt ?? ''} />
+    {#each metadata as { title, slug, excerpt }}
+      <a href={`blog/${slug}/${language}`}>
+        <PostTile {title} excerpt={excerpt ?? ''} dir={language == 'ar' ? 'rtl' : 'ltr'} />
       </a>
     {/each}
   </div>
@@ -63,6 +44,7 @@
     line-height: 1.5;
     color: #f8f8f8;
     font-weight: bold;
+    font-size: 1.25rem;
   }
 
   .recent {
@@ -76,9 +58,10 @@
   #post-column {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     #post-column {
       width: 500px;
       justify-content: center;
@@ -90,9 +73,5 @@
   a {
     display: block;
     text-decoration: none;
-  }
-
-  a:nth-child(even) {
-    align-self: flex-end;
   }
 </style>

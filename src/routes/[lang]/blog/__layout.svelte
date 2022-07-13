@@ -15,7 +15,7 @@
     font-size: 120%;
     text-rendering: optimizelegibility;
     overflow-x: hidden;
-    overflow-y: auto !important;
+    overflow-y: auto;
   } /*14px*/
 
   :global(body) {

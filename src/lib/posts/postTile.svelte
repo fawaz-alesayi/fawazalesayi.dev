@@ -1,9 +1,10 @@
 <script lang="ts">
   export let title: string;
   export let excerpt: string;
+  export let dir: string = 'ltr';
 </script>
 
-<div class="tile">
+<div class="tile" {dir}>
   <h4 class="tile-header">{title}</h4>
   <p class="tile-intro">{excerpt}</p>
 </div>
@@ -15,10 +16,6 @@
     height: auto;
     filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
     margin-bottom: 50px;
-  }
-
-  .tile:nth-child(even) {
-    align-self: flex-end;
   }
 
   .tile-header {

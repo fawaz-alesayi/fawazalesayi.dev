@@ -1,4 +1,6 @@
 <script>
+  // @ts-nocheck
+
   export let lang;
   export let title;
   export let creationDate;
@@ -10,7 +12,7 @@
 
 <header class="header-bg">
   <h4 class="header-text">
-    <a href="/blog"> return; </a>
+    <a href="/{lang}/blog"> {lang == 'ar' ? 'الرجوع' : 'return;'}</a>
   </h4>
 </header>
 

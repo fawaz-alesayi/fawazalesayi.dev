@@ -2,11 +2,12 @@
 title: 'أهلا و سهلا'
 slug: 'hello-world'
 creationDate: '2020-08-04'
-excerpt: 'Welcome to my blog!'
+excerpt: 'أهلا في مدوتني'
 cover: futures.jpeg
 hidden: false
 lang: 'ar'
 ---
+
 
 <script lang="ts">
     import '$static/themes/prism-ghcolors.css';

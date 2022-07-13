@@ -13,6 +13,7 @@ const config = {
       aliases: {
         $src: resolve('./src'),
         $static: resolve('./static'),
+        $base: resolve('.'),
       },
     }),
     md.mdsvex(mdsvexConfig),
@@ -20,16 +21,10 @@ const config = {
   extensions: ['.svelte', ...mdsvexConfig.extensions],
 
   kit: {
-    vite: {
-      resolve: {
-        alias: {
-          $src: resolve('./src'),
-          $static: resolve('./static'),
-        },
-      },
-    },
-
     adapter: staticAdapter(),
+    prerender: {
+      default: true,
+    },
   },
 };
 
