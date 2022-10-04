@@ -1,45 +1,19 @@
 {
-  "name": "fawaztsa-blog",
-  "description": "Fawaz Alesayi (@fawaztsa) Blog",
-  "version": "0.1.0",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "prepare": "svelte-kit sync",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write --plugin-search-dir=. .",
-    "test": "pnpm test:integration",
-    "test:integration": "jest"
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-node": "1.0.0-next.79",
-    "@sveltejs/adapter-static": "1.0.0-next.35",
-    "@sveltejs/kit": "1.0.0-next.370",
-    "@testing-library/svelte": "^3.1.3",
-    "@types/accept-language-parser": "^1.5.3",
-    "@types/jest": "^28.1.5",
-    "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.30.6",
-    "eslint": "^8.19.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-svelte3": "^4.0.0",
-    "front-matter": "^4.0.2",
-    "mdsvex": "^0.10.6",
-    "prettier": "~2.7.1",
-    "prettier-plugin-svelte": "^2.7.0",
-    "svelte": "3.49.0",
-    "svelte-check": "^2.8.0",
-    "svelte-preprocess": "^4.10.7",
-    "tslib": "^2.4.0",
-    "typescript": "^4.7.4",
-    "vite": "~2.9.14"
-  },
+  "name": "@example/blog",
   "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
-    "accept-language-parser": "^1.5.0",
-    "sveltekit-i18n": "^2.2.2"
+    "astro": "^1.4.4",
+    "@astrojs/mdx": "^0.11.4",
+    "@astrojs/rss": "^1.0.2",
+    "@astrojs/sitemap": "^1.0.0"
   }
 }
