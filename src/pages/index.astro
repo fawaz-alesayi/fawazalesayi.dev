@@ -3,19 +3,58 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>Hello!</h1>
-			<p>Welcome to my blog, where I discuss, solve, and rant about things in software engineering.</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout>
+  <html lang="en">
+    <head>
+      <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+      <Header title={SITE_TITLE} />
+      <main>
+        <h1>Hey.</h1>
+        <p>
+          Hey, I'm Fawaz. I'm trying to make software and the process of building it headache-free,
+          fun, and scalable, in that order. At least until AI takes over.
+        </p>
+        <p>
+          <em>How?</em> by exploring human psychology, treating software and programming languages as
+          <a
+            href="https://jnd.org/the-design-of-everyday-things-revised-and-expanded-edition/"
+            target="_blank">Everyday Things</a
+          >
+        </p>
+
+        <blockquote>
+          Pinning the blame on the programmer may be a comfortable way to proceed, but why was the
+          programming language ever designed so that a single act by a single programmer could cause
+          calamity? Worse, blaming the programmer without fixing the root, underlying cause does not
+          fix the problem: the same error is likely to be repeated by someone else.
+        </blockquote>
+
+        <small
+          >- me when creating this blog (quote adapted from Don Norman's Design of Everyday Things actual quote)</small
+        >
+
+        <small id="finefineprint">
+          Granted he was talking about nuclear reactor Controls but Programming Languages are pretty
+          much the same thing!
+        </small>
+      </main>
+      <Footer />
+    </body>
+  </html>
+</BaseLayout>
+
+<style>
+  #finefineprint {
+    font-size: xx-small;
+  }
+
+  q,
+  small {
+    display: block;
+  }
+</style>
